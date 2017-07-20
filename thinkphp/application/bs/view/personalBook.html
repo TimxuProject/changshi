@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div>
+    <ul>
+        {volist name='records' id='record'}
+        <li> {$record.userName} ---- 《{$record.bookName}》
+            <a href="../../return/{$record.rid}">点击归还</a></li>
+        {/volist}
+    </ul>
+</div>
+
+<!--{$records}-->
+<a href="../user_controller/menu">返回菜单</a>
+</body>
+</html>

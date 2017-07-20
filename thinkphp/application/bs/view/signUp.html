@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+{$msg}
+<form action="./signUp" method="POST">
+    姓名:<input type="text" name = "name" placeholder="请输入您的姓名" required><br><br>
+    用户名:<input type="text" name = "userName" placeholder="请输入您的用户名" required><br><br>
+    密码:<input type="password" name = "passWord" placeholder="请输入您的密码" required><br><br>
+    确认密码:<input type="password" name = "passCheck" placeholder="请再次输入您的密码" required><br><br>
+    性别:<input type="radio" name = "gender" value = "1" required>男
+    <input type = "radio" name = "gender" value = "0">女<br><br>
+    <input type="submit" name="signUp" value="点击提交">
+
+    <a href="./login">点击登录</a>
+
+</form>
+</body>
+<!--<input type="button" onclick="window.location.href='../login.php'" value="返回登录">-->

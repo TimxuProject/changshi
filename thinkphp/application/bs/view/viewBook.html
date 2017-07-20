@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div>
+
+    <ul>{if condition="($uType eq 1)"}
+            管理员模式
+        {volist name='books' id='book'}
+        <li> {$book.bid} ---- 《{$book.bookName}》----- {$book.author}著----{$book.publisher}
+            {if condition = "$book.isOut eq 1"} ---- 租借在外中
+            {else/} ---- 在库
+            {/if}
+            <a href="../../detail/{$book.bid}">详细</a>
+            <a href="../../delete/{$book.bid}">删除</a></li>
+        {/volist}
+
+
+        {else/}
+            用户模式
+        <form action = './preBorrow' method = 'post'>
+        {volist name='books' id='book'}
+            {if condition = "$book.isOut eq 0" }
+            <!--<input type = 'checkbox'>-->
+            <li><input type = "checkbox" name = "group[]" value = "{$book.bid}">
+         《{$book.bookName}》----- {$book.author}著----{$book.publisher}
+            <a href="../../detail/{$book.bid}">详细</a>
+            <a href="../../borrow/{$book.bid}">点击借阅</a></li>
+            {else/}
+            {/if}
+            {/volist}
+            <input type="submit" name="button" value="加入预借列表">
+            </form>
+        {/if}
+
+
+    </ul>
+</div>
+<a href="../user_controller/menu">点击返回菜单</a>
+{$books}
+{if condition="($uType eq 1)"}
+<a href="../book_controller/addBook">添加新书</a>
+{else/}
+{/if}
+</body>
+
+</html>

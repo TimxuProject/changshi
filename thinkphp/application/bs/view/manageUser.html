@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div>
+
+    <ul>
+        用户管理
+        {volist name='users' id='user'}
+        <li> {$user.uid} ---- {$user.userName}-----
+            {if condition="($user.uType eq 1)"}管理员账户
+            {else/}普通账户
+            {/if}
+            </li>
+        {/volist}
+
+
+    </ul>
+</div>
+<a href="../user_controller/menu">返回菜单</a>
+
+</body>
+{$page}
+</html>

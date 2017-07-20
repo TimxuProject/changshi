@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+书名：{$bookName}<br>
+作者：{$author}<br>
+出版商：{$publisher}<br>
+类型：{$genre}<br><br>
+{if condition = "($uType eq 1)"}
+管理信息<br>
+书本ID：{$bid}<br>
+持有人：{$userName}<br>
+{else/}普通用户模式
+{/if}
+
+<a href="../bs/book_controller/viewBook">点击返回</a>
+
+</body>
+</html>
+
+

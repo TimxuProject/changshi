@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<!--表单-->
+图书添加<br><br>
+<form action='./addBook' method='POST' enctype="multipart/form-data">
+    书名:<input type="text" name="bookName" placeholder="请输入书名" required><br><br>
+    作者:<input type="text" name="author"  placeholder="请输入作者名"><br><br>
+    出版商:<input type = "text" name="publisher"  placeholder="请输入出版商名"><br><br>
+    <!--    出版日期:<input type = "text" name = "publishDate" placeholder="请输入出版日期"><br><br>-->
+    类型：<br>
+    <select name="genre">
+        <option value ="文学">文学</option>
+        <option value ="科技">科技</option>
+        <option value="军事">军事</option>
+        <option value="教育">教育</option>
+    </select>
+    <br><br>
+    简述：<br>
+    <textarea name="detail" rows="3" cols="20" id="content" style="height:100px;width:250px;"></textarea><br><br>
+    封面：<br>
+    <input type ="file" name = "cover"><br><br>
+
+    <input type="submit" name ='addBook'value="点击添加">
+
+    <a href="../book_controller/viewBook">返回</a>
+</form>
+</body>
+</html>

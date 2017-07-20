@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--<input type="button" name="logout"><br>-->
+当前用户名为： {$userName}<br>
+当前用户ID为： {$uid}<br>
+
+<!--当前账户类型为：{$uType}<br>-->
+
+
+<a href="../book_controller/viewBook">浏览图书</a>
+{if condition = "$uType eq 1"}<a href="../user_controller/manageUser">管理用户</a>
+{else/}
+<a href="../book_controller/personalBook">我的借阅</a>
+<a href="../book_controller/preBorrow">我的预借</a>
+{/if}
+<a href="logout">退出</a>
+
+<!--echo("<input type=\"button\" onclick=\"window.location.href='viewBooks.php'\" value=\"图书管理\">");-->
+
+</body>
+</html>
