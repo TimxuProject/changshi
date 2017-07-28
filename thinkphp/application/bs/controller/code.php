@@ -22,6 +22,10 @@ function encode($string){
         $content .= chr(ord($string[$i]) ^ ord($key[$i]));
     }
 //    return $content;
+    $content = urlencode($content);
+    $search = array('+','?');
+    $replace = array('_','-');
+    str_replace($search,$replace,$content);
     return $content;
 }
 
@@ -29,7 +33,12 @@ function decode($content){
     $key = '[Lvn[o]6e{y=q#82]G.]rDzv.j';
     $keyLen = strlen($key);
 
-//    $content = urldecode($content);
+
+    $replace = array('+','?');
+    $search = array('_','-');
+    str_replace($search,$replace,$content);
+
+    $content = urldecode($content);
     $strLen = strLen($content);
     if($keyLen < $strLen) {
         $key = str_pad($key, $strLen, $key);
