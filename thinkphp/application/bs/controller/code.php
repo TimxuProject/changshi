@@ -9,8 +9,7 @@
 function encode($string){
     $key = '[Lvn[o]6e{y=q#82]G.]rDzv.j';
     $keyLen = strlen($key);
-    $string = base64_encode($string);
-
+    
     $strLen = strlen($string);
 
     if($keyLen < $strLen) {
@@ -21,40 +20,36 @@ function encode($string){
     for($i = 0; $i < $strLen; $i++) {
         $content .= chr(ord($string[$i]) ^ ord($key[$i]));
     }
-//    return $content;
-    return $content;
+   return urlencode(base64_encode($content));
+
 }
 
 function decode($content){
     $key = '[Lvn[o]6e{y=q#82]G.]rDzv.j';
     $keyLen = strlen($key);
-
-//    $content = urldecode($content);
+    $content = base64_decode(urldecode($content));
+   
     $strLen = strLen($content);
     if($keyLen < $strLen) {
         $key = str_pad($key, $strLen, $key);
     }
-
     $string = '';
     for($i = 0; $i < $strLen; $i++) {
         $string .= chr(ord($content[$i]) ^ ord($key[$i]));
-    }
-    $string = base64_decode($string);
-
-
+    } 
     return $string;
 }
 
 function tokenCheck($token){
+
     if($token == null){
         echo'null';
         return false;
     }
-//    print_r($token);
     $string = decode($token);
-//    echo "《".$string.'》';
+  
     $array = explode(',',$string);
-//print_r($array);
+
     if(TIME()>$array[3]){
         echo'超时';
         echo TIME()."   ";
