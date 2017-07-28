@@ -33,7 +33,6 @@ class BookController extends CommonController
         $book->coverPath = $coverPath;
 
         $result = $book->save();
-//        echo  $book->getLastSql();
         if($result){
             $this->success('添加成功','addBook');
         }

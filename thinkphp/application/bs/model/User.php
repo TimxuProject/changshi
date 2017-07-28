@@ -34,10 +34,4 @@ class User extends \think\Model
         // 数据库调试模式
         'debug'       => false,
     ];
-
-
-
-//    protected function inicialize(){
-//        parent::initialize();
-//    }
 }

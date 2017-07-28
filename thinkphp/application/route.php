@@ -9,7 +9,6 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 use think\Route;
-
 Route::rule('borrow/:bid','bs/BookController/borrow');
 Route::rule('return/:rid','bs/BookController/returnAction');
 Route::rule('detail/:bid','bs/BookController/detail');
